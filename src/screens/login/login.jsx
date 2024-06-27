@@ -3,6 +3,7 @@ import { styles } from "./login.style.js";
 import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
+import Simplebtn from "../../components/simplebtn/simplebtn.jsx";
 
 
 function Login() {
@@ -24,9 +25,7 @@ function Login() {
         </View>
 
         <View style={styles.footer}>
-            <TouchableOpacity>
-                <Text style={styles.footerText}>Criar minha conta.</Text>
-            </TouchableOpacity>
+            <Simplebtn text="Criar minha conta"></Simplebtn>
         </View>
     </View>
 }

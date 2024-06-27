@@ -11,9 +11,15 @@ export const styles = {
         width: "100%",
         marginBottom: 15
     },
+    formBtn: {
+        width: "100%",
+        marginTop: 50,
+        marginBottom: 15
+    },
+
     formGroup: {
         width: "100%",
-        marginTop: 25,
+        marginTop: 40,
         marginBottom: 40
     },
     footer: {
