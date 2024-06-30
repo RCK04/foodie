@@ -4,14 +4,10 @@ import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
 import Simplebtn from "../../components/simplebtn/simplebtn.jsx";
+import { dismissKeyboard } from "../../utils/dismissKeyboard.js";
 
 
 function Registro() {
-    const dismissKeyboard = () => {
-        Keyboard.dismiss();
-    }
-
-
     return <TouchableWithoutFeedback onPress={dismissKeyboard}>
         <ScrollView>
             <View style={styles.container}>

@@ -4,14 +4,10 @@ import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
 import Simplebtn from "../../components/simplebtn/simplebtn.jsx";
+import { dismissKeyboard } from "../../utils/dismissKeyboard.js";
 
 
 function Login() {
-    const dismissKeyboard = () => {
-        Keyboard.dismiss();
-    }
-
-
     return <TouchableWithoutFeedback onPress={dismissKeyboard}>
         <View style={styles.container}>
             <Header texto="Acesse sua conta." />
