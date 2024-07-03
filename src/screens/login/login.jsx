@@ -1,36 +1,46 @@
-import { View, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./login.style.js";
 import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
-import Simplebtn from "../../components/simplebtn/simplebtn.jsx";
-import { dismissKeyboard } from "../../utils/dismissKeyboard.js";
+import { useState } from "react";
 
+function Login(props) {
 
-function Login() {
-    return <TouchableWithoutFeedback onPress={dismissKeyboard}>
-        <View style={styles.container}>
-            <Header texto="Acesse sua conta." />
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
 
-            <View style={styles.formGroup}>
-                <View style={styles.form}>
-                    <TextBox label="E-mail" />
-                </View>
+    function ProcessarLogin() {
+        console.log(email, senha);
+    }
 
-                <View style={styles.form}>
-                    <TextBox label="Senha" isPassword={true} />
-                </View>
+    return <View style={styles.container}>
+        <Header texto={email} />
 
-                <View style={styles.form}>
-                    <Button texto="Acessar" />
-                </View>
+        <View style={styles.formGroup}>
+            <View style={styles.form}>
+                <TextBox label="E-mail"
+                    onChangeText={(texto) => setEmail(texto)}
+                    value={email} />
             </View>
 
-            <View style={styles.footer}>
-                <Simplebtn text="Criar minha conta"></Simplebtn>
+            <View style={styles.form}>
+                <TextBox label="Senha" isPassword={true}
+                    onChangeText={(texto) => setSenha(texto)}
+                    value={senha} />
+            </View>
+
+            <View style={styles.form}>
+                <Button texto="Acessar" onPress={ProcessarLogin} />
             </View>
         </View>
-    </TouchableWithoutFeedback>
+
+        <View style={styles.footer}>
+            <TouchableOpacity onPress={() => props.navigation.navigate("registro")}>
+                <Text style={styles.footerText}>Criar minha conta.</Text>
+            </TouchableOpacity>
+        </View>
+    </View>
 }
 
 export default Login;

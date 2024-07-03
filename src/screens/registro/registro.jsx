@@ -1,16 +1,14 @@
-import { View, Text, TouchableOpacity, TouchableWithoutFeedback, Keyboard, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { styles } from "./registro.style.js";
 import Header from "../../components/header/header.jsx";
 import TextBox from "../../components/textbox/textbox.jsx";
 import Button from "../../components/button/button.jsx";
-import Simplebtn from "../../components/simplebtn/simplebtn.jsx";
-import { dismissKeyboard } from "../../utils/dismissKeyboard.js";
 
 
-function Registro() {
-    return <TouchableWithoutFeedback onPress={dismissKeyboard}>
-        <ScrollView>
-            <View style={styles.container}>
+function Registro(props) {
+    return <>
+        <View style={styles.container}>
+            <ScrollView style={styles.scrollView}>
                 <Header texto="Criar sua conta." />
 
                 <View style={styles.formGroup}>
@@ -30,17 +28,15 @@ function Registro() {
                         <TextBox label="Confirme a senha" isPassword={true} />
                     </View>
 
-                    <View style={styles.formBtn}>
-                        <Button texto="Próximo passo" />
+                    <View style={styles.form}>
+                        <Button texto="Próximo passo"
+                            onPress={() => props.navigation.navigate("registro2")} />
                     </View>
                 </View>
 
-                <View style={styles.footer}>
-                    <Simplebtn text="Acessar minha conta"></Simplebtn>
-                </View>
-            </View>
-        </ScrollView>
-    </TouchableWithoutFeedback>
+            </ScrollView>
+        </View>
+    </>
 }
 
 export default Registro;
