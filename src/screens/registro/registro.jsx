@@ -8,7 +8,6 @@ import { useState } from "react";
 
 function Registro(props) {
 
-    //    [variavel, função]
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha1, setSenha1] = useState("");
