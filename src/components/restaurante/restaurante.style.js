@@ -8,8 +8,7 @@ export const styles = {
     },
     logotipo: {
         width: 80,
-        height: 80,
-        borderRadius: 6
+        height: 80
     },
     textos: {
         flex: 1,

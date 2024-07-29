@@ -1,4 +1,5 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import icons from "../../constants/icons.js";
 import { styles } from "./restaurante.style.js";
 
 function Restaurante(props) {
@@ -9,7 +10,7 @@ function Restaurante(props) {
             <Text style={styles.endereco}>{props.endereco}</Text>
         </View>
         <TouchableOpacity>
-            <Image source={props.icone} style={styles.favorito} />
+            <Image source={icons.favoritoFull} style={styles.favorito} />
         </TouchableOpacity>
     </View>
 }
